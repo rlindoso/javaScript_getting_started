@@ -5,16 +5,19 @@
     </head>
     <body>
         <div id = "app">
-            <button onclick="mostraAlerta()">Me pressione</button>
-            <input onkeypress="mostraAlerta()"></input>
+            <input type="text" name="nome" id="nome"></input>
+            <button class="botao">Adicionar</button>
         </div>
 
         <script>
             // JavaScript
+            var inputElement = document.querySelector('input[name=nome]')
+            var btnElement = document.querySelector('button.botao');
 
-           function mostraAlerta(){
-               alert('Botão foi clicado');
-           }
+            btnElement.onclick = function(){
+                var texto = 'Adicionado ' + inputElement.value;
+                alert(texto);
+            }
         </script>
     </body>
 </html>
