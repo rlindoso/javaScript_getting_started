@@ -32,8 +32,12 @@
                 } 
             }
 
+            function retornaSexoTernaria(sexo){
+                return (sexo === 'M') ? 'Masculino' : 'Feminino';
+            }
+
  
-            var resultadoDaFuncao = retornaSexoComSwitchCase('M')
+            var resultadoDaFuncao = retornaSexoTernaria('F')
 
             console.log(resultadoDaFuncao);
         </script>
