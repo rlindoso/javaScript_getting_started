@@ -5,19 +5,21 @@
     </head>
     <body>
         <div id = "app">
-            <input type="text" name="nome" id="nome"></input>
-            <button class="botao">Adicionar</button>
+
         </div>
 
         <script>
             // JavaScript
-            var inputElement = document.querySelector('input[name=nome]')
-            var btnElement = document.querySelector('button.botao');
+            var linkElement = document.createElement('a');
 
-            btnElement.onclick = function(){
-                var texto = 'Adicionado ' + inputElement.value;
-                alert(texto);
-            }
+            linkElement.setAttribute('href', 'https://github.com/rlindoso');
+
+            var textElement = document.createTextNode('Acessar gitHub rlindoso');
+            linkElement.appendChild(textElement);
+
+            var conteinerElement = document.querySelector('div#app')
+            conteinerElement.appendChild(linkElement);
+
         </script>
     </body>
 </html>
