@@ -7,12 +7,33 @@
         <script>
             // JavaScript
 
-            function soma(numero1, numero2){
-                var resultado = numero1 + numero2;
-                return resultado;
+            function retornaSexo(sexo){
+                // M, F
+                // Mascolino, Feminino
+                if (sexo === 'M'){ // === compara além do valor, também os tipos
+                    return 'Masculino';
+                } else if (sexo === 'F') {
+                    return 'Feminino';
+                } else{
+                    return 'Outro';
+                }
             }
+
+            function retornaSexoComSwitchCase(sexo){
+                // M, F
+                // Mascolino, Feminino
+                switch (sexo){
+                    case 'M':
+                        return 'Masculino';
+                    case 'F':
+                        return 'Feminino';
+                    default:
+                        return 'Outro';
+                } 
+            }
+
  
-            var resultadoDaFuncao = soma(1, 2)
+            var resultadoDaFuncao = retornaSexoComSwitchCase('M')
 
             console.log(resultadoDaFuncao);
         </script>
