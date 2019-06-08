@@ -7,39 +7,16 @@
         <script>
             // JavaScript
 
-            function retornaSexo(sexo){
-                // M, F
-                // Mascolino, Feminino
-                if (sexo === 'M'){ // === compara além do valor, também os tipos
-                    return 'Masculino';
-                } else if (sexo === 'F') {
-                    return 'Feminino';
-                } else{
-                    return 'Outro';
-                }
+            //for (var i = 0; i <= 100; i++){
+            //    console.log(i);
+            //}
+
+            var j = 0;
+            while (j <= 100){
+                console.log(j);
+                
+                j++
             }
-
-            function retornaSexoComSwitchCase(sexo){
-                // M, F
-                // Mascolino, Feminino
-                switch (sexo){
-                    case 'M':
-                        return 'Masculino';
-                    case 'F':
-                        return 'Feminino';
-                    default:
-                        return 'Outro';
-                } 
-            }
-
-            function retornaSexoTernaria(sexo){
-                return (sexo === 'M') ? 'Masculino' : 'Feminino';
-            }
-
- 
-            var resultadoDaFuncao = retornaSexoTernaria('F')
-
-            console.log(resultadoDaFuncao);
         </script>
     </body>
 </html>
