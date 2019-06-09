@@ -4,14 +4,26 @@
         <title>Curso JavaScript</title>
     </head>
     <body>
-        <div id = "app">
+        <div id = "ex1e2">
 
         </div>
 
+        <div id = "ex3e4">
+
+        </div>
         <script> 
             // JavaScript
+            /*
+               1º exercício
+                Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+                vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+                aparecer na tela. 
+               2º exercício
+                Utilizando o resultado do primeiro desafio, toda vez que o usuário passar o mouse por cima de
+                algum quadrado troque sua cor para uma cor aleatória gerada pela função abaixo:
+            */
+            var conteinerElementex1e2 = document.querySelector('div#ex1e2');
             function criarNovoQuadrado(){
-                var conteinerElement = document.querySelector('div#app');
                 var boxElement = document.createElement('div');
                 boxElement.setAttribute('class', 'box')
 
@@ -23,18 +35,13 @@
                     boxElement.style.backgroundColor = getRandomColor();
                 }
 
-                conteinerElement.appendChild(boxElement);
+                conteinerElementex1e2.appendChild(boxElement);
             }
 
             buttonElement = document.createElement('button');
-
             buttonElement.setAttribute('onclick', 'criarNovoQuadrado()');
-
             buttonElement.innerHTML = 'Criar novo quadrado (exercício 1)';
-
-            var conteinerElement = document.querySelector('div#app');
-            conteinerElement.appendChild(buttonElement);
-
+            conteinerElementex1e2.appendChild(buttonElement);
 
             function getRandomColor() {
                 var letters = "0123456789ABCDEF";
@@ -45,6 +52,53 @@
                 return color;
             }
 
+            /*
+               3º exercício
+                A partir do seguinte vetor:
+                var nomes = ["Diego", "Gabriel", "Lucas"];
+                Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+                    ● Diego
+                    ● Gabriel
+                    ● Lucas
+
+
+               4º exercício
+                Seguindo o resultado do exercício anterior adicione um input em tela e um botão como a seguir:
+                <input type="text" name="nome">
+                <button onClick="adicionar()">Adicionar</button>
+                Ao clicar no botão, a função adicionar() deve ser disparada adicionando um novo item a lista de
+                nomes baseado no nome preenchido no input e renderizando o novo item em tela juntos aos
+                demais itens anteriores. Além disso, o conteúdo do input deve ser apagado após o clique.
+            */
+            var conteinerElementex3e4 = document.querySelector('div#ex3e4');
+
+            inputElement = document.createElement('input');
+            conteinerElementex3e4.appendChild(inputElement);
+
+            buttonAdicionar = document.createElement('button');
+            buttonAdicionar.setAttribute('onclick', 'Adicionar()');
+            buttonAdicionar.innerHTML = 'Adicionar (exercício 4)';
+            conteinerElementex3e4.appendChild(buttonAdicionar);
+
+            var nomes = ["Diego", "Gabriel", "Lucas"];
+            ulElement = document.createElement('ul');
+            conteinerElementex3e4.appendChild(ulElement);
+
+            for (nome of nomes){
+                var liElement = document.createElement('li');
+                var textElement = document.createTextNode(nome);
+
+                liElement.appendChild(textElement);
+                ulElement.appendChild(liElement);
+            }
+
+            function Adicionar(){
+                var liElement = document.createElement('li');
+                var textElement = document.createTextNode(inputElement.value);
+
+                liElement.appendChild(textElement);
+                ulElement.appendChild(liElement);
+            }
         </script>
     </body>
 </html>
