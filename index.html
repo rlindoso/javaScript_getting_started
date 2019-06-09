@@ -5,20 +5,18 @@
     </head>
     <body>
         <div id = "app">
-
+            <div class="box"></div>
         </div>
 
-        <script>
+        <script> 
             // JavaScript
-            var linkElement = document.createElement('a');
+            var boxElement = document.querySelector('.box');
 
-            linkElement.setAttribute('href', 'https://github.com/rlindoso');
+            boxElement.style.width = 100;
+            boxElement.style.height = 100;
+            boxElement.style.backgroundColor = '#f00';
 
-            var textElement = document.createTextNode('Acessar gitHub rlindoso');
-            linkElement.appendChild(textElement);
-
-            var conteinerElement = document.querySelector('div#app')
-            conteinerElement.appendChild(linkElement);
+            console.log(boxElement);
 
         </script>
     </body>
