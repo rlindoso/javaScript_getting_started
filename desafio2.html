@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso JavaScript</title>
+    </head>
+    <body>
+        <div id = "app">
+
+        </div>
+
+        <script> 
+            // JavaScript
+
+            function criarNovoQuadrado(){
+                var conteinerElement = document.querySelector('div#app');
+                var divElement = document.createElement('div');
+                divElement.setAttribute('class', 'box')
+
+                divElement.style.width = 100;
+                divElement.style.height = 100;
+                divElement.style.backgroundColor = '#f00';
+
+                conteinerElement.appendChild(divElement);
+            }
+
+            buttonElement = document.createElement('button');
+
+            buttonElement.setAttribute('onclick', 'criarNovoQuadrado()');
+
+            buttonElement.innerHTML = 'Criar novo quadrado';
+
+            var conteinerElement = document.querySelector('div#app');
+            conteinerElement.appendChild(buttonElement);
+
+        </script>
+    </body>
+</html>
