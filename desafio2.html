@@ -10,27 +10,40 @@
 
         <script> 
             // JavaScript
-
             function criarNovoQuadrado(){
                 var conteinerElement = document.querySelector('div#app');
-                var divElement = document.createElement('div');
-                divElement.setAttribute('class', 'box')
+                var boxElement = document.createElement('div');
+                boxElement.setAttribute('class', 'box')
 
-                divElement.style.width = 100;
-                divElement.style.height = 100;
-                divElement.style.backgroundColor = '#f00';
+                boxElement.style.width = 100;
+                boxElement.style.height = 100;
+                boxElement.style.backgroundColor = '#f00';
 
-                conteinerElement.appendChild(divElement);
+                boxElement.onmouseover = function () {
+                    boxElement.style.backgroundColor = getRandomColor();
+                }
+
+                conteinerElement.appendChild(boxElement);
             }
 
             buttonElement = document.createElement('button');
 
             buttonElement.setAttribute('onclick', 'criarNovoQuadrado()');
 
-            buttonElement.innerHTML = 'Criar novo quadrado';
+            buttonElement.innerHTML = 'Criar novo quadrado (exercício 1)';
 
             var conteinerElement = document.querySelector('div#app');
             conteinerElement.appendChild(buttonElement);
+
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
 
         </script>
     </body>
